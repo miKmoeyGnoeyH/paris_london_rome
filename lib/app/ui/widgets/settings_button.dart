@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:paris_london_rome/app/ui/settings/settings_page.dart';
 
 import '../../routes/app_pages.dart';
 

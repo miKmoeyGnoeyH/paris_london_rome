@@ -3,6 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>NSLocationWhenInUseUsageDescription</key>
+    <string>This app needs GPS permission</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>

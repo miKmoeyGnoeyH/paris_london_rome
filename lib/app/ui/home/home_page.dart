@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import 'package:gradient_borders/gradient_borders.dart';
 import 'package:paris_london_rome/app/ui/widgets/settings_button.dart';
@@ -20,13 +19,6 @@ class HomePage extends GetView<HomeController> {
     final double width = MediaQuery.of(context).size.width;
     final double height = MediaQuery.of(context).size.height;
 
-    //googlemap test
-    late GoogleMapController mapController;
-    const LatLng center = LatLng(45.521563, -122.677433);
-    void onMapCreated(GoogleMapController controller) {
-      mapController = controller;
-    }
-
     return Scaffold(
       appBar: const PreferredSize(
         preferredSize: Size.fromHeight(50),
@@ -43,7 +35,7 @@ class HomePage extends GetView<HomeController> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                GoogleMapWidget(width: width, height: height, center: center),
+                GoogleMapWidget(width: width, height: height),
                 Container(
                   width: width * 0.5 - 15,
                   height: height * 0.13,
@@ -68,6 +60,8 @@ class HomePage extends GetView<HomeController> {
           backgroundColor: Colors.white,
           shape: GradientOutlineInputBorder(
             gradient: const LinearGradient(
+              begin: Alignment(-1, -1),
+              end: Alignment(1, 1),
               colors: [
                 Color(0xffCBFFF5),
                 Color(0xffFFD9E7),

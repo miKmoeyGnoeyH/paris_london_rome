@@ -8,12 +8,10 @@ class GoogleMapWidget extends GetView<MapController> {
     super.key,
     required this.width,
     required this.height,
-    required this.center,
   });
 
   final double width;
   final double height;
-  final LatLng center;
 
   @override
   Widget build(BuildContext context) {
@@ -28,12 +26,31 @@ class GoogleMapWidget extends GetView<MapController> {
         ),
       ),
       clipBehavior: Clip.hardEdge,
-      child: GoogleMap(
-        myLocationButtonEnabled: false,
-        initialCameraPosition: CameraPosition(
-          target: center,
-          zoom: 11.0,
-        ),
+      child: GetX<MapController>(
+        initState: (state) {
+          Get.find<MapController>().getLatLng();
+        },
+        builder: (_) {
+          return _.latlng.latitude == null
+              ? const Center(child: CircularProgressIndicator())
+              : GoogleMap(
+                  //liteModeEnabled: true,
+                  rotateGesturesEnabled: false,
+                  scrollGesturesEnabled: false,
+                  zoomControlsEnabled: false,
+                  zoomGesturesEnabled: false,
+                  tiltGesturesEnabled: false,
+                  mapToolbarEnabled: false,
+                  //buildingsEnabled: false,
+                  myLocationEnabled: true,
+                  myLocationButtonEnabled: false,
+                  
+                  initialCameraPosition: CameraPosition(
+                    target: LatLng(_.latlng.latitude, _.latlng.longitude),
+                    zoom: 11.0,
+                  ),
+                );
+        },
       ),
     );
   }
