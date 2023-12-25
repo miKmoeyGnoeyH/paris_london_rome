@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:gradient_borders/gradient_borders.dart';
+import 'package:paris_london_rome/app/ui/home/widgets/weather_widget.dart';
 import 'package:paris_london_rome/app/ui/widgets/settings_button.dart';
 
 import '../../controller/home_controller.dart';
@@ -27,8 +28,7 @@ class HomePage extends GetView<HomeController> {
           leading: Settings(),
         ),
       ),
-      body:
-      Padding(
+      body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Column(
           children: [
@@ -36,18 +36,7 @@ class HomePage extends GetView<HomeController> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 GoogleMapWidget(width: width, height: height),
-                Container(
-                  width: width * 0.5 - 15,
-                  height: height * 0.13,
-                  decoration: BoxDecoration(
-                    color: Colors.red,
-                    borderRadius: BorderRadius.circular(10),
-                    border: Border.all(
-                      color: Colors.black.withAlpha(20),
-                      width: 0.5,
-                    ),
-                  ),
-                )
+                WeatherWidget(width: width, height: height),
               ],
             ),
           ],
@@ -81,4 +70,3 @@ class HomePage extends GetView<HomeController> {
     );
   }
 }
-
