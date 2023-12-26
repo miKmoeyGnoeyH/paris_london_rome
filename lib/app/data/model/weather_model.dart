@@ -1,9 +1,9 @@
 import 'dart:developer';
 
 class WeatherModel {
-  late String tmp;
-  late String pop;
-  late String sky;
+   String? tmp;
+   String? pop;
+   String? sky;
 
   WeatherModel();
 

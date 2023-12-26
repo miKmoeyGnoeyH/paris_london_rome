@@ -3,6 +3,14 @@ import 'package:get/get.dart';
 import 'package:paris_london_rome/app/controller/map_controller.dart';
 import 'package:paris_london_rome/app/controller/weather_controller.dart';
 
+const List<IconData> sky = [
+  Icons.sunny,
+  Icons.sunny,
+  Icons.sunny,
+  Icons.cloud_outlined,
+  Icons.cloud
+];
+
 class WeatherWidget extends GetView<WeatherController> {
   const WeatherWidget({super.key, required this.width, required this.height});
 
@@ -37,13 +45,23 @@ class WeatherWidget extends GetView<WeatherController> {
                         ? const Center(
                             child: CircularProgressIndicator(),
                           )
-                        : Row(
-                            children: [
-                              Icon(Icons.cloud),
-                              Text('${_.weatherModel.tmp}℃'),
-                              // Text(_.weatherModel.pop),
-                              // Text(_.weatherModel.sky),
-                            ],
+                        : Center(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  sky[int.parse(_.weatherModel.sky)],
+                                  size: 64,
+                                ),
+                                const SizedBox(width: 10),
+                                Text(
+                                  '${_.weatherModel.tmp}℃',
+                                  style: const TextStyle(
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              ],
+                            ),
                           );
                   },
                 );
