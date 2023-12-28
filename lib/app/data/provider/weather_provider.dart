@@ -29,22 +29,17 @@ class WeatherProvider {
 
       final String requestUrl =
           '$baseUrl&base_date=$baseDate&base_time=$baseTime&nx=${xyModel.x}&ny=${xyModel.y}';
-      print('$requestUrl');
+      log(requestUrl);
 
       try {
         var response = await httpClient.get(Uri.parse(requestUrl));
 
         if (response.statusCode == 200) {
           var jsonResponse = json.decode(response.body);
-          //log('jsonResponse : $jsonResponse');
           jsonResponse = jsonResponse['response'];
-          //print('jsonRespose : $jsonResponse');
           jsonResponse = jsonResponse['body'];
-          //print('jsonRespose : $jsonResponse');
           jsonResponse = jsonResponse['items'];
-          //print('jsonRespose : $jsonResponse');
           jsonResponse = jsonResponse['item'];
-          //log('jsonResponse : $jsonResponse');
 
           WeatherModel weatherModel = WeatherModel.fromJsonList(jsonResponse);
           return weatherModel;

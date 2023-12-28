@@ -26,21 +26,19 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
-
-    return Center(
-      child: SizedBox(
-        width: width * 0.7,
-        height: height * 0.7,
-        child: const Column(
-          children: [
-            Text(
-              'PARIS',
-            ),
-            Text('LONDON'),
-            Text('ROME'),
-          ],
+    return Scaffold(
+      body: Container(
+        color: Colors.white,
+        child: const Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('PARIS', style: TextStyle(color: Colors.black, fontSize: 35, fontWeight: FontWeight.bold),),
+              Text('LONDON', style: TextStyle(color: Colors.black, fontSize: 35, fontWeight: FontWeight.bold),),
+              Text('ROME', style: TextStyle(color: Colors.black, fontSize: 35, fontWeight: FontWeight.bold),),
+            ],
+          ),
         ),
       ),
     );

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'package:gradient_borders/gradient_borders.dart';
+import 'package:paris_london_rome/app/controller/memo_controller.dart';
+import 'package:paris_london_rome/app/ui/home/widgets/add_memo_floating_button.dart';
+import 'package:paris_london_rome/app/ui/home/widgets/memos_list_view_widget.dart';
 import 'package:paris_london_rome/app/ui/home/widgets/weather_widget.dart';
 import 'package:paris_london_rome/app/ui/widgets/settings_button.dart';
 
-import '../../controller/home_controller.dart';
-import '../../routes/app_pages.dart';
 import '../widgets/custom_appbar.dart';
 import 'widgets/google_map_widget.dart';
 
-class HomePage extends GetView<HomeController> {
+class HomePage extends GetView<MemoController> {
   const HomePage({super.key});
 
   @override
@@ -29,44 +29,30 @@ class HomePage extends GetView<HomeController> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                GoogleMapWidget(width: width, height: height),
-                WeatherWidget(width: width, height: height),
-              ],
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: SizedBox(
-        width: width * 0.2,
-        height: width * 0.2,
-        child: FloatingActionButton(
-          backgroundColor: Colors.white,
-          shape: GradientOutlineInputBorder(
-            gradient: const LinearGradient(
-              begin: Alignment(-1, -1),
-              end: Alignment(1, 1),
-              colors: [
-                Color(0xffCBFFF5),
-                Color(0xffFFD9E7),
-                Color(0xffFFF8C1),
-              ],
-            ),
-            width: 3,
-            borderRadius: BorderRadius.circular(50),
-          ),
-          onPressed: () => Get.toNamed(Routes.editPage),
-          child: const Icon(
-            Icons.add,
-            size: 40,
+        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+        child: SingleChildScrollView(
+          clipBehavior: Clip.none,
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  GoogleMapWidget(width: width, height: height),
+                  WeatherWidget(width: width, height: height),
+                ],
+              ),
+              const SizedBox(height: 10),
+              MemosListViewWidget(
+                  controller: controller, height: height, width: width)
+            ],
           ),
         ),
       ),
+      floatingActionButton:
+          AddMemoFloatingButton(width: width, controller: controller),
     );
   }
 }

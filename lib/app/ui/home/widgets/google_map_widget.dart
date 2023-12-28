@@ -44,7 +44,7 @@ class GoogleMapWidget extends GetView<MapController> {
                   //buildingsEnabled: false,
                   myLocationEnabled: true,
                   myLocationButtonEnabled: false,
-                  
+
                   initialCameraPosition: CameraPosition(
                     target: LatLng(_.latlng.latitude, _.latlng.longitude),
                     zoom: 11.0,
