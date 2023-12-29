@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'package:paris_london_rome/app/controller/home/memo_controller.dart';
+import 'package:paris_london_rome/app/controller/home_and_edit/memo_controller.dart';
 
 import 'package:paris_london_rome/app/ui/widgets/custom_appbar.dart';
 

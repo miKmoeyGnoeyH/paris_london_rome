@@ -1,6 +1,5 @@
 import 'package:get/get.dart';
 
-import '../binding/edit_binding.dart';
 import '../ui/pages/edit_page/edit_page.dart';
 import '../ui/pages/home_page/home_page.dart';
 import '../ui/pages/settings_page/settings_page.dart';
@@ -20,7 +19,6 @@ class AppPages {
     GetPage(
       name: Routes.editPage,
       page: () => const EditPage(),
-      binding: EditBinding(),
     ),
   ];
 }

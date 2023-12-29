@@ -1,10 +1,10 @@
 import 'dart:developer';
 
 import 'package:get/get.dart';
-import 'package:paris_london_rome/app/data/repository/home/memo_repository.dart';
+import 'package:paris_london_rome/app/data/repository/home_and_edit/memo_repository.dart';
 import 'package:paris_london_rome/app/routes/app_pages.dart';
 
-import '../../data/model/home/memo_model.dart';
+import '../../data/model/home_and_edit/memo_model.dart';
 
 class MemoController extends GetxController {
   final MemoRepository memoRepository;

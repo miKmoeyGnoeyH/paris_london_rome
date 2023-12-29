@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../controller/home/memo_controller.dart';
+import '../../../../controller/home_and_edit/memo_controller.dart';
 import 'custom_alert_dialog_widget.dart';
 import 'memo_widget.dart';
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../controller/home/memo_controller.dart';
+import '../../../../controller/home_and_edit/memo_controller.dart';
 
 List<Color> colors = [
   const Color(0xffcbfff5),
@@ -54,6 +54,7 @@ class _MemoWidgetState extends State<MemoWidget> {
             ),
           ],
         ),
+        // TODO : Text and Icon relocation, it is possible to should modify widget expanding logic
         child: Column(
           children: [
             Padding(

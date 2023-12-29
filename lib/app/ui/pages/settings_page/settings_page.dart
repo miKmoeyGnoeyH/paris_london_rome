@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:paris_london_rome/app/controller/theme_controller.dart';
+import 'package:paris_london_rome/app/controller/settings/theme_controller.dart';
 import 'package:paris_london_rome/app/ui/pages/settings_page/widgets/settings_category_content_widget.dart';
 import 'package:paris_london_rome/app/ui/pages/settings_page/widgets/settings_category_title_widget.dart';
 

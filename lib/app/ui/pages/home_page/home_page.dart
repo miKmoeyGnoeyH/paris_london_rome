@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'package:paris_london_rome/app/controller/home/memo_controller.dart';
+import 'package:paris_london_rome/app/controller/home_and_edit/memo_controller.dart';
 
 import 'package:paris_london_rome/app/ui/pages/home_page/widgets/add_memo_floating_button.dart';
 import 'package:paris_london_rome/app/ui/pages/home_page/widgets/google_map_widget.dart';
