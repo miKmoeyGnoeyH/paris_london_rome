@@ -1,5 +1,6 @@
 import 'package:location/location.dart';
-import 'package:paris_london_rome/app/data/model/latlng_model.dart';
+
+import '../../../model/home/map/latlng_model.dart';
 
 class LatLngProvider {
   final Location location;

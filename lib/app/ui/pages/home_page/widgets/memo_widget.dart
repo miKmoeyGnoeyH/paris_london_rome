@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../controller/memo_controller.dart';
+import '../../../../controller/home/memo_controller.dart';
 
 List<Color> colors = [
   const Color(0xffcbfff5),

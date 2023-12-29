@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:paris_london_rome/app/controller/map_controller.dart';
-import 'package:paris_london_rome/app/controller/weather_controller.dart';
+import 'package:paris_london_rome/app/controller/home/map_controller.dart';
+import 'package:paris_london_rome/app/controller/home/weather_controller.dart';
 
 const List<IconData> sky = [
   Icons.sunny,

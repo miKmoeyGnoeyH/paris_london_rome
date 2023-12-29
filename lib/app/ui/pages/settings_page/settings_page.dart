@@ -3,8 +3,9 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:paris_london_rome/app/controller/theme_controller.dart';
-import 'package:paris_london_rome/app/ui/settings/widgets/settings_category_content_widget.dart';
-import 'package:paris_london_rome/app/ui/settings/widgets/settings_category_title_widget.dart';
+import 'package:paris_london_rome/app/ui/pages/settings_page/widgets/settings_category_content_widget.dart';
+import 'package:paris_london_rome/app/ui/pages/settings_page/widgets/settings_category_title_widget.dart';
+
 import 'package:paris_london_rome/app/ui/widgets/custom_appbar.dart';
 
 class SettingsPage extends GetView<ThemeContoller> {
@@ -37,13 +38,14 @@ class SettingsPage extends GetView<ThemeContoller> {
                     onChanged: (value) {
                       log(controller.isDarkThemeChecked.toString());
                       log(value.toString());
-                      controller.isDarkThemeChecked = !controller.isDarkThemeChecked;
+                      controller.isDarkThemeChecked =
+                          !controller.isDarkThemeChecked;
                     },
                   ),
                 ),
               ),
-              SettingsCategoryContentWidget(name: '폰트'),
-              SettingsCategoryContentWidget(name: '글씨 크기'),
+              const SettingsCategoryContentWidget(name: '폰트'),
+              const SettingsCategoryContentWidget(name: '글씨 크기'),
             ],
           ),
           const SettingsCategoryTitleWidget(title: '애플리케이션 정보'),

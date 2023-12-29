@@ -1,8 +1,7 @@
 import 'dart:convert';
-import 'dart:developer';
 
 import 'package:get_storage/get_storage.dart';
-import 'package:paris_london_rome/app/data/model/memo_model.dart';
+import 'package:paris_london_rome/app/data/model/home/memo_model.dart';
 
 class MemoProvider {
   final GetStorage getStorage;

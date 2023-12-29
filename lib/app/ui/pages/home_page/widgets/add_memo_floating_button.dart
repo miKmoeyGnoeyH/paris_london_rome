@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gradient_borders/input_borders/gradient_outline_input_border.dart';
 
-import '../../../controller/memo_controller.dart';
+import '../../../../controller/home/memo_controller.dart';
 
 class AddMemoFloatingButton extends StatelessWidget {
   const AddMemoFloatingButton({

@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:paris_london_rome/app/data/model/memo_model.dart';
-import 'package:paris_london_rome/app/data/repository/memo_repository.dart';
+import 'package:paris_london_rome/app/data/model/home/memo_model.dart';
+import 'package:paris_london_rome/app/data/repository/home/memo_repository.dart';
 
 class EditController extends GetxController {
   final MemoRepository memoRepository;

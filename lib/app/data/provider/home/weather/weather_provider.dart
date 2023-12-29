@@ -3,9 +3,10 @@ import 'dart:developer';
 
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
-import 'package:paris_london_rome/app/data/model/latlng_model.dart';
-import 'package:paris_london_rome/app/data/model/weather_model.dart';
-import 'package:paris_london_rome/app/data/model/xy_model.dart';
+
+import '../../../model/home/map/latlng_model.dart';
+import '../../../model/home/weather/weather_model.dart';
+import '../../../model/home/weather/xy_model.dart';
 
 const baseUrl =
     'http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?'
@@ -23,8 +24,10 @@ class WeatherProvider {
     if (latLng.latitude != null && latLng.longitude != null) {
       DateTime now = DateTime.now();
       final String baseDate = DateFormat('yyyyMMdd').format(now);
-      final String baseTime =
-          (now.hour - ((now.hour - 2) % 3)).toString().padLeft(2, '0').padRight(4, '0');
+      final String baseTime = (now.hour - ((now.hour - 2) % 3))
+          .toString()
+          .padLeft(2, '0')
+          .padRight(4, '0');
       XYModel xyModel = XYModel.fromLatLng(latLng: latLng);
 
       final String requestUrl =

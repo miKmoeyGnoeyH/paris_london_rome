@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:paris_london_rome/app/ui/home/widgets/custom_alert_dialog_widget.dart';
 
-import '../../../controller/memo_controller.dart';
+import '../../../../controller/home/memo_controller.dart';
+import 'custom_alert_dialog_widget.dart';
 import 'memo_widget.dart';
 
 class MemosListViewWidget extends StatelessWidget {

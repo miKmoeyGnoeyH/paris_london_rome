@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:paris_london_rome/app/data/repository/latlng_repository.dart';
 
-import '../data/model/latlng_model.dart';
+import '../../data/model/home/map/latlng_model.dart';
+import '../../data/repository/home/map/latlng_repository.dart';
 
 class MapController extends GetxController {
   final LatLngRepository latLngRepository;

@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:paris_london_rome/app/data/model/latlng_model.dart';
+import '../map/latlng_model.dart';
 
 const double RE = 6371.00877; // 지구 반경
 const double GRID = 5.0; // 격자 간격(km)

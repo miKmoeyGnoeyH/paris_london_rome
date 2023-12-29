@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
-import 'package:paris_london_rome/app/ui/edit/edit_page.dart';
-import 'package:paris_london_rome/app/ui/home/home_page.dart';
-import 'package:paris_london_rome/app/ui/settings/settings_page.dart';
 
 import '../binding/edit_binding.dart';
+import '../ui/pages/edit_page/edit_page.dart';
+import '../ui/pages/home_page/home_page.dart';
+import '../ui/pages/settings_page/settings_page.dart';
 
 part 'app_routes.dart';
 

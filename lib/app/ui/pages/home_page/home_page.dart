@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'package:paris_london_rome/app/controller/memo_controller.dart';
-import 'package:paris_london_rome/app/ui/home/widgets/add_memo_floating_button.dart';
-import 'package:paris_london_rome/app/ui/home/widgets/memos_list_view_widget.dart';
-import 'package:paris_london_rome/app/ui/home/widgets/weather_widget.dart';
+import 'package:paris_london_rome/app/controller/home/memo_controller.dart';
+
+import 'package:paris_london_rome/app/ui/pages/home_page/widgets/add_memo_floating_button.dart';
+import 'package:paris_london_rome/app/ui/pages/home_page/widgets/google_map_widget.dart';
+import 'package:paris_london_rome/app/ui/pages/home_page/widgets/memos_list_view_widget.dart';
+import 'package:paris_london_rome/app/ui/pages/home_page/widgets/weather_widget.dart';
 import 'package:paris_london_rome/app/ui/widgets/settings_button.dart';
 
-import '../widgets/custom_appbar.dart';
-import 'widgets/google_map_widget.dart';
+import '../../widgets/custom_appbar.dart';
 
 class HomePage extends GetView<MemoController> {
   const HomePage({super.key});

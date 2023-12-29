@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:paris_london_rome/app/controller/edit_controller.dart';
-import 'package:paris_london_rome/app/data/provider/memo_provider.dart';
-import 'package:paris_london_rome/app/data/repository/memo_repository.dart';
+import 'package:paris_london_rome/app/controller/edit/edit_controller.dart';
+import 'package:paris_london_rome/app/data/provider/home/memo_provider.dart';
+import 'package:paris_london_rome/app/data/repository/home/memo_repository.dart';
 
 class EditBinding extends Bindings {
   @override

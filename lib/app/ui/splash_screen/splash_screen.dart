@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import 'package:paris_london_rome/app/ui/home/home_page.dart';
+import '../pages/home_page/home_page.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -34,9 +34,27 @@ class _SplashScreenState extends State<SplashScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('PARIS', style: TextStyle(color: Colors.black, fontSize: 35, fontWeight: FontWeight.bold),),
-              Text('LONDON', style: TextStyle(color: Colors.black, fontSize: 35, fontWeight: FontWeight.bold),),
-              Text('ROME', style: TextStyle(color: Colors.black, fontSize: 35, fontWeight: FontWeight.bold),),
+              Text(
+                'PARIS',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 35,
+                    fontWeight: FontWeight.bold),
+              ),
+              Text(
+                'LONDON',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 35,
+                    fontWeight: FontWeight.bold),
+              ),
+              Text(
+                'ROME',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 35,
+                    fontWeight: FontWeight.bold),
+              ),
             ],
           ),
         ),
