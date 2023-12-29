@@ -19,7 +19,7 @@ class AppPages {
     ),
     GetPage(
       name: Routes.editPage,
-      page: () => EditPage(),
+      page: () => const EditPage(),
       binding: EditBinding(),
     ),
   ];

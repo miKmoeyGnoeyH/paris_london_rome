@@ -29,7 +29,7 @@ class _EditPageState extends State<EditPage> {
     function();
     _titleController.dispose();
     _contentController.dispose();
-    log('EditPageDispose()');
+    // log('EditPageDispose()');
     super.dispose();
   }
 

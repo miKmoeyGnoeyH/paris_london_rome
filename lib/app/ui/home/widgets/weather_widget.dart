@@ -51,6 +51,7 @@ class WeatherWidget extends GetView<WeatherController> {
                               children: [
                                 Icon(
                                   sky[int.parse(_.weatherModel.sky)],
+                                  // color: Colors.black.withAlpha(70),
                                   size: 64,
                                 ),
                                 const SizedBox(width: 10),
@@ -58,6 +59,7 @@ class WeatherWidget extends GetView<WeatherController> {
                                   '${_.weatherModel.tmp}℃',
                                   style: const TextStyle(
                                     fontSize: 20,
+                                    // color: Colors.black.withAlpha(70),
                                   ),
                                 ),
                               ],
@@ -67,23 +69,6 @@ class WeatherWidget extends GetView<WeatherController> {
                 );
         },
       ),
-      // latlng.latitude == null
-      //     ? const Center(child: CircularProgressIndicator())
-      //     : GetX<WeatherController>(
-      //         initState: (state) {
-      //           Get.find<WeatherController>().getWeather(latlng);
-      //         },
-      //         builder: (_) {
-      //           return Row(
-      //             children: [
-      //               Icon(Icons.cloud),
-      //               Text(_.weatherModel.tmp),
-      //               //Text(_.weatherModel.pop),
-      //               //Text(_.weatherModel.sky),
-      //             ],
-      //           );
-      //         },
-      //       ),
     );
   }
 }

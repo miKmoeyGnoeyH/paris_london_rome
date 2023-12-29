@@ -14,6 +14,8 @@ class CustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppBar(
       centerTitle: true,
+      elevation: 1,
+      surfaceTintColor: Colors.white,
       shape: Border(
           bottom: BorderSide(
         color: Colors.black.withAlpha(50),

@@ -20,7 +20,7 @@ class MemoProvider {
         memos.add(MemoModel.fromJson(memoJson));
       }
     }
-    log('memos : ${memos.toString()}');
+    // log('memos : ${memos.toString()}');
     // log('memos.runtimeType : ${memos.runtimeType}');
     return memos;
   }
@@ -36,6 +36,6 @@ class MemoProvider {
     }
     // log('jsonEncode(memosStringList).runtimeType : ${jsonEncode(memosStringList).runtimeType}');
     await getStorage.write('memos', jsonEncode(memosStringList));
-    log('Memos saved');
+    // log('Memos saved');
   }
 }

@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:paris_london_rome/app/ui/home/widgets/custom_alert_dialog_widget.dart';
 
 import '../../../controller/memo_controller.dart';
-
-List<Color> colors = [
-  const Color(0xffcbfff5),
-  const Color(0xffffd9e7),
-  const Color(0xfffff8c1),
-];
+import 'memo_widget.dart';
 
 class MemosListViewWidget extends StatelessWidget {
   const MemosListViewWidget({
@@ -27,7 +23,7 @@ class MemosListViewWidget extends StatelessWidget {
       initState: (state) {
         Get.find<MemoController>().getMemos();
       },
-      builder: (_) {
+      builder: (controller) {
         return ListView.separated(
           shrinkWrap: true,
           primary: false,
@@ -36,104 +32,82 @@ class MemosListViewWidget extends StatelessWidget {
               key: UniqueKey(),
               confirmDismiss: (direction) async {
                 if (direction == DismissDirection.endToStart) {
-                  showDialog(
+                  await showDialog(
                     context: context,
                     builder: (context) {
-                      return AlertDialog(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        title: const Text('삭제'),
-                        content: const Text('삭?'),
-                        actions: <Widget>[
-                          TextButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            child: const Text(
-                              '아니오',
-                              style: TextStyle(
-                                color: Colors.black,
-                              ),
-                            ),
-                          ),
-                          TextButton(
-                            onPressed: () {
-                              controller.deleteMemo(index);
-                              Navigator.pop(context);
-                            },
-                            child: const Text(
-                              '삭',
-                              style: TextStyle(
-                                color: Colors.red,
-                              ),
-                            ),
-                          ),
-                        ],
+                      return CustomAlertDialogWidget(
+                        title: '삭제',
+                        content: '이 메모를 삭제하시겠습니까?',
+                        deny: '아니오',
+                        accept: '삭제',
+                        arguments: index,
+                        onAccept: controller.deleteMemo,
                       );
                     },
                   );
                 }
                 if (direction == DismissDirection.startToEnd) {
-                  controller.editMemo(index);
+                  await controller.editMemo(index);
                   return false;
                 }
+                return null;
               },
               background: Container(
                 decoration: BoxDecoration(
-                  color: const Color(0xffcbfff5),
+                  // color: const Color(0xffcbfff5),
                   borderRadius: BorderRadius.circular(10),
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.all(20),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Icon(
+                            Icons.edit,
+                            // color: Color(0xffcbfff5),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
                 ),
               ),
               secondaryBackground: Container(
                 decoration: BoxDecoration(
-                  color: const Color(0xffffd9e7),
+                  // color: const Color(0xffffd9e7),
                   borderRadius: BorderRadius.circular(10),
                 ),
-              ),
-              child: Container(
-                  height: height * 0.13,
-                  width: width - 20,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                    border: Border.all(
-                      color: colors[index % 3],
-                      width: 1,
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: colors[index % 3],
-                        blurRadius: 5,
-                      ),
+                child: const Padding(
+                  padding: EdgeInsets.all(20),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Icon(
+                            Icons.delete,
+                            // color: Color(0xffffd9e7),
+                          )
+                        ],
+                      )
                     ],
                   ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          _.memos[index].title,
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(fontSize: 14),
-                        ),
-                        const SizedBox(height: 10),
-                        Text(
-                          _.memos[index].content,
-                          maxLines: 3,
-                          overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(fontSize: 12),
-                        ),
-                      ],
-                    ),
-                  )),
+                ),
+              ),
+              child: MemoWidget(
+                height: height,
+                width: width,
+                index: index,
+                controller: controller,
+              ),
             );
           },
-          separatorBuilder: (context, index) =>
-          const SizedBox(height: 10),
-          itemCount: _.memos.length,
+          separatorBuilder: (context, index) => const SizedBox(height: 10),
+          itemCount: controller.memos.length,
         );
       },
     );
