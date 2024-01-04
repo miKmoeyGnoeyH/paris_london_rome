@@ -15,11 +15,22 @@ class AddMemoFloatingButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       width: width * 0.2,
       height: width * 0.2,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(100),
+        boxShadow: [
+          BoxShadow(
+            color: Theme.of(context).colorScheme.onBackground.withAlpha(155),
+            blurRadius: 7,
+            offset: const Offset(2.5, 2.5),
+          ),
+        ]
+      ),
       child: FloatingActionButton(
-        backgroundColor: Colors.white,
+        elevation: 0,
+        backgroundColor: Theme.of(context).colorScheme.background,
         shape: GradientOutlineInputBorder(
           gradient: const LinearGradient(
             begin: Alignment(-1, -1),
@@ -36,9 +47,10 @@ class AddMemoFloatingButton extends StatelessWidget {
         onPressed: () {
           controller.createNewMemo();
         },
-        child: const Icon(
+        child: Icon(
           Icons.add,
           size: 40,
+          color: Theme.of(context).colorScheme.onBackground,
         ),
       ),
     );

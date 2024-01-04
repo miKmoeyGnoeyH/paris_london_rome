@@ -1,12 +1,45 @@
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
-class ThemeContoller extends GetxController {
-  final _isDarkThemeChecked = false.obs;
+class ThemeController extends GetxController {
+  final themeStorage = GetStorage();
 
-  get isDarkThemeChecked => _isDarkThemeChecked.value;
-  set isDarkThemeChecked(value) => _isDarkThemeChecked.value = value;
+  final _isDarkMode = false.obs;
 
-  switchTheme() {
-    isDarkThemeChecked = !isDarkThemeChecked;
+  get isDarkMode => _isDarkMode.value;
+
+  set isDarkMode(value) {
+    _isDarkMode.value = value;
+    themeStorage.write(isDarkModeKey, value);
+  }
+
+  final isDarkModeKey = 'isDarkMode';
+
+  final _font = 'Roboto'.obs;
+
+  get font => _font.value;
+
+  set font(value) {
+    _font.value = value;
+    themeStorage.write(fontKey, value);
+  }
+
+  final fontKey = 'font';
+
+  final _fontSize = 'Default'.obs;
+
+  get fontSize => _fontSize.value;
+
+  set fontSize(value) {
+    _fontSize.value = value;
+    themeStorage.write(fontSize, value);
+  }
+
+  final fontSizeKey = 'fontSize';
+
+  ThemeController() {
+    isDarkMode = themeStorage.read(isDarkModeKey) ?? false;
+    font = themeStorage.read(fontKey) ?? 'Roboto';
+    fontSize = themeStorage.read(fontSizeKey) ?? 'Default';
   }
 }

@@ -14,7 +14,7 @@ class AppPages {
     ),
     GetPage(
       name: Routes.settingsPage,
-      page: () => const SettingsPage(),
+      page: () => SettingsPage(),
     ),
     GetPage(
       name: Routes.editPage,

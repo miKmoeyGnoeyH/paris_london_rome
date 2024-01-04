@@ -15,7 +15,7 @@ class SettingsCategoryContentWidget extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         border: Border(
-          bottom: BorderSide(color: Colors.black.withAlpha(50)),
+          bottom: BorderSide(color: Theme.of(context).colorScheme.onBackground.withAlpha(127)),
         ),
       ),
       child: Padding(
@@ -25,7 +25,7 @@ class SettingsCategoryContentWidget extends StatelessWidget {
           children: [
             Text(
               name,
-              style: const TextStyle(fontSize: 14),
+              style: Theme.of(context).textTheme.titleMedium,
             ),
             child ?? const SizedBox(),
           ],

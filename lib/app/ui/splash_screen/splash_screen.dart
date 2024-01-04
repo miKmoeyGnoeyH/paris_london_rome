@@ -28,32 +28,23 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Colors.white,
-        child: const Center(
+        color: Theme.of(context).colorScheme.background,
+        child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 'PARIS',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 35,
-                    fontWeight: FontWeight.bold),
+                style: Theme.of(context).textTheme.displayLarge,
               ),
               Text(
                 'LONDON',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 35,
-                    fontWeight: FontWeight.bold),
+                style: Theme.of(context).textTheme.displayLarge,
               ),
               Text(
                 'ROME',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 35,
-                    fontWeight: FontWeight.bold),
+                style: Theme.of(context).textTheme.displayLarge,
               ),
             ],
           ),

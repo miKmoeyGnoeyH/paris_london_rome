@@ -25,7 +25,7 @@ class WeatherWidget extends GetView<WeatherController> {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         border: Border.all(
-          color: Colors.black.withAlpha(20),
+          color: Theme.of(context).colorScheme.onBackground.withAlpha(80),
           width: 0.5,
         ),
       ),
@@ -57,10 +57,8 @@ class WeatherWidget extends GetView<WeatherController> {
                                 const SizedBox(width: 10),
                                 Text(
                                   '${_.weatherModel.tmp}℃',
-                                  style: const TextStyle(
-                                    fontSize: 20,
-                                    // color: Colors.black.withAlpha(70),
-                                  ),
+                                  style:
+                                      Theme.of(context).textTheme.titleLarge,
                                 ),
                               ],
                             ),

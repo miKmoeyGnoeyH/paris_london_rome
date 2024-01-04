@@ -1,20 +1,18 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:paris_london_rome/app/controller/settings/theme_controller.dart';
 import 'package:paris_london_rome/app/ui/pages/settings_page/widgets/settings_category_content_widget.dart';
 import 'package:paris_london_rome/app/ui/pages/settings_page/widgets/settings_category_title_widget.dart';
+import 'package:paris_london_rome/app/ui/theme/theme_elements.dart';
 
 import 'package:paris_london_rome/app/ui/widgets/custom_appbar.dart';
 
-class SettingsPage extends GetView<ThemeContoller> {
+class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     const String title = '설정';
-    Get.put(ThemeContoller());
 
     return Scaffold(
       appBar: const PreferredSize(
@@ -27,26 +25,53 @@ class SettingsPage extends GetView<ThemeContoller> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SettingsCategoryTitleWidget(title: '애플리케이션 설정'),
-          Column(
-            children: [
-              SettingsCategoryContentWidget(
-                name: "어두운 테마 사용",
-                child: SizedBox(
-                  height: 14,
-                  child: Switch(
-                    value: controller.isDarkThemeChecked,
+          GetX<ThemeController>(
+            builder: (_) => Column(
+              children: [
+                SettingsCategoryContentWidget(
+                  name: "어두운 테마 사용",
+                  child: SizedBox(
+                    height: 14,
+                    child: Switch(
+                      value: _.isDarkMode,
+                      onChanged: (value) {
+                        _.isDarkMode = value;
+                      },
+                    ),
+                  ),
+                ),
+                SettingsCategoryContentWidget(
+                  name: '폰트',
+                  child: DropdownButton(
+                    alignment: AlignmentDirectional.centerEnd,
+                    isDense: true,
+                    underline: const SizedBox.shrink(),
+                    value: _.font,
+                    items: fonts
+                        .map((e) => DropdownMenuItem(value: e, child: Text(e)))
+                        .toList(),
                     onChanged: (value) {
-                      log(controller.isDarkThemeChecked.toString());
-                      log(value.toString());
-                      controller.isDarkThemeChecked =
-                          !controller.isDarkThemeChecked;
+                      _.font = value;
                     },
                   ),
                 ),
-              ),
-              const SettingsCategoryContentWidget(name: '폰트'),
-              const SettingsCategoryContentWidget(name: '글씨 크기'),
-            ],
+                SettingsCategoryContentWidget(
+                  name: '글씨 크기',
+                  child: DropdownButton(
+                    alignment: AlignmentDirectional.centerEnd,
+                    isDense: true,
+                    underline: const SizedBox.shrink(),
+                    value: _.fontSize,
+                    items: fontSizes
+                        .map((e) => DropdownMenuItem(value: e, child: Text(e)))
+                        .toList(),
+                    onChanged: (value) {
+                      _.fontSize = value;
+                    },
+                  ),
+                ),
+              ],
+            ),
           ),
           const SettingsCategoryTitleWidget(title: '애플리케이션 정보'),
           const Column(

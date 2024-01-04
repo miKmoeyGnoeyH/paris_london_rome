@@ -28,23 +28,17 @@ class CustomAlertDialogWidget extends StatelessWidget {
       ),
       title: Text(
         title ?? '',
-        style: const TextStyle(
-          fontSize: 14,
-          fontWeight: FontWeight.bold,
-        ),
+        style: Theme.of(context).textTheme.bodyMedium,
       ),
       content: Text(
         content,
-        style: const TextStyle(fontSize: 14),
+        style: Theme.of(context).textTheme.bodyMedium,
       ),
       actions: <Widget>[
         TextButton(
           child: Text(
             deny,
-            style: const TextStyle(
-              color: Colors.black,
-              fontSize: 14,
-            ),
+            style: Theme.of(context).textTheme.bodyMedium,
           ),
           onPressed: () {
             Navigator.pop(context);
@@ -53,10 +47,7 @@ class CustomAlertDialogWidget extends StatelessWidget {
         TextButton(
           child: Text(
             accept,
-            style: const TextStyle(
-              color: Colors.red,
-              fontSize: 14,
-            ),
+            style: Theme.of(context).textTheme.bodyMedium,
           ),
           onPressed: () {
             onAccept(arguments);

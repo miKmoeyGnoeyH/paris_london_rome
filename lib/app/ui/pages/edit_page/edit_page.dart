@@ -57,7 +57,7 @@ class _EditPageState extends State<EditPage> {
                     hintText: '제목을 입력해 주세요',
                     border: InputBorder.none,
                   ),
-                  style: const TextStyle(fontSize: 20, height: 1),
+                  style: Theme.of(context).textTheme.titleLarge,
                   maxLines: null,
                   cursorColor: Colors.black,
                   onChanged: (title) {
@@ -72,7 +72,7 @@ class _EditPageState extends State<EditPage> {
                     hintText: '내용을 입력해 주세요',
                     border: InputBorder.none,
                   ),
-                  style: const TextStyle(fontSize: 14, height: 1),
+                  style: Theme.of(context).textTheme.bodyLarge,
                   maxLines: null,
                   cursorColor: Colors.black,
                   onChanged: (content) {

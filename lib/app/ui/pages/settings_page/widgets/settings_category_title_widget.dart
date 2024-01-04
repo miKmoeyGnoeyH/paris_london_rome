@@ -11,10 +11,10 @@ class SettingsCategoryTitleWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 10, right: 10, top: 20),
+      padding: const EdgeInsets.only(left: 10, right: 10, top: 20, bottom: 5),
       child: Text(
         title,
-        style: const TextStyle(fontSize: 20),
+        style: Theme.of(context).textTheme.titleLarge,
       ),
     );
   }
