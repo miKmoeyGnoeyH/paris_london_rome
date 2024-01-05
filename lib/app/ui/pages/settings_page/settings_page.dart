@@ -3,9 +3,10 @@ import 'package:get/get.dart';
 import 'package:paris_london_rome/app/controller/settings/theme_controller.dart';
 import 'package:paris_london_rome/app/ui/pages/settings_page/widgets/settings_category_content_widget.dart';
 import 'package:paris_london_rome/app/ui/pages/settings_page/widgets/settings_category_title_widget.dart';
-import 'package:paris_london_rome/app/ui/theme/theme_elements.dart';
 
 import 'package:paris_london_rome/app/ui/widgets/custom_appbar.dart';
+
+import '../../theme/theme.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
